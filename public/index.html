@@ -10,6 +10,17 @@
     </head>
     <body>
         <p>Welcome to node app chat</p>
-        <script src="" async defer></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+
+            socket.on('connect', () => {
+                console.log('connected to the server');
+            });
+
+            socket.on('disconnect', () => {
+                console.log('Disconnected from server');
+            });
+        </script>
     </body>
 </html>
